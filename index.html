@@ -13,7 +13,14 @@
   .pill { background: #101a33e6; border: 2px solid #2c3e6b; border-radius: 999px; padding: 5px 14px; font-weight: 700; font-size: 17px; }
   .pill.bad { border-color: #ff5d5d; color: #ff9c9c; animation: pulse .6s infinite alternate; }
   @keyframes pulse { to { background: #5a1420; } }
-  #coach { top: 8px; left: 10px; width: 330px; background: #101a33ee; border: 2px solid #ffd34d; border-radius: 16px; padding: 10px 14px; }
+  #left { top: 8px; left: 10px; width: 340px; display: flex; flex-direction: column; gap: 8px; }
+  #advisor { position: relative; background: #101a33ee; border: 2px solid #5aa9ff; border-radius: 16px; padding: 8px 12px 10px; display: none; }
+  #advisor h3 { margin: 0 0 2px; font-size: 15px; color: #9cc8ff; }
+  #advisor .x { position: absolute; top: 4px; right: 10px; cursor: pointer; color: #8fa3d6; font-size: 13px; }
+  .adv { border-left: 4px solid #5aa9ff; padding: 3px 0 3px 9px; margin-top: 7px; font-size: 13.5px; line-height: 1.35; }
+  .adv.urgent { border-color: #ff5d5d; } .adv.warn { border-color: #ffd34d; }
+  .adv b { font-size: 14.5px; } .adv p { margin: 1px 0 0; color: #c3cff0; } .adv p.do { color: #fff; }
+  #coach { position: relative; background: #101a33ee; border: 2px solid #ffd34d; border-radius: 16px; padding: 10px 14px; }
   #coach h3 { margin: 0 0 4px; font-size: 16px; color: #ffd34d; }
   #coach p { margin: 0; font-size: 14px; line-height: 1.35; color: #dfe7ff; }
   #coach .x { position: absolute; top: 4px; right: 10px; cursor: pointer; color: #8fa3d6; font-size: 13px; }
@@ -70,7 +77,7 @@
   <div class="pill" title="Actions per minute: how fast your hands are!">🖱 <span id="rA">0</span> APM</div>
   <div class="pill" id="pauseBtn" title="Pause (F10)" style="cursor:pointer">⏸</div>
 </div>
-<div id="coach" class="hud"></div>
+<div id="left" class="hud"><div id="coach"></div><div id="advisor"></div></div>
 <div id="toasts" class="hud"></div>
 <button id="idleBtn" class="hud"></button>
 <div id="tip" class="hud"></div>
@@ -103,5 +110,6 @@
 <script src="js/game.js"></script>
 <script src="js/ai.js"></script>
 <script src="js/ui.js"></script>
+<script src="js/advisor.js"></script>
 </body>
 </html>

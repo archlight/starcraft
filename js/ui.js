@@ -572,7 +572,7 @@ function updateHud() {
     h = `<div class="nm">${sel.length} selected</div>` + Object.keys(c).map(k => `<span class="grp">${DEFS[k].icon} ${DEFS[k].name} ×${c[k]}</span>`).join('');
   }
   if (h !== ui.infoHtml) { ui.infoHtml = h; info.innerHTML = h; }
-  refreshCard(); updateCoach();
+  refreshCard(); updateCoach(); updateAdvisor();
 }
 
 // ---------- screens ----------
@@ -602,7 +602,7 @@ function startGame(diff) {
   if (!actx) { try { actx = new (window.AudioContext || window.webkitAudioContext)(); } catch (e) { /* no sound */ } }
   newGame(diff);
   buildTerrain();
-  ui.cmd = null; ui.menu = null; ui.paused = false; ui.cardSig = '?'; ui.infoHtml = ''; ui.coachOff = false; ui.endShown = false; coachI = 0; coachShown = -1; acc = 0;
+  ui.cmd = null; ui.menu = null; ui.paused = false; ui.cardSig = '?'; ui.infoHtml = ''; ui.coachOff = false; ui.endShown = false; coachI = 0; coachShown = -1; acc = 0; resetAdvisor();
   $('menu').style.display = 'none';
   const hq = G.hqs[0][0] || G.ents.find(e => e.team === 0 && e.type === 'hq');
   centerOn(hq.x, hq.y);

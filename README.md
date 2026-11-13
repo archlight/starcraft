@@ -11,3 +11,4 @@ Open `index.html` in any browser. No install or build step.
 - `js/game.js`: simulation (units, buildings, pathfinding, combat, economy)
 - `js/ai.js`: enemy commander
 - `js/ui.js`: controls, rendering, HUD, coach
+- `js/advisor.js`: live advisor that tells the player what to do next, why, and how
